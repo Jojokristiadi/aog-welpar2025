@@ -17,14 +17,14 @@ body{
 header{
     width: 100vw;
     height: 100vh;
-    background-image: url('./Img/img/worship.jpg');
+    background-image: url('./Img/img/background-home.png');
     background-position: bottom;
     background-size: cover;
     display: flex;
     align-items: flex-end;
     justify-content: center;
     font-family: 'Abhaya Libre';
-    font-weight: 600px;
+    font-weight: 600; /* Perbaiki typo: 600px menjadi 600 */
 }
 
 .header-content{
@@ -35,7 +35,7 @@ header{
 
 .header-content h2{
     font-size: 60px;
-    font-family: abhaya libre;
+    font-family: 'Abhaya Libre'; /* Tambahkan kutip */
 }
 
 .line{
@@ -50,7 +50,7 @@ header{
     font-size: 45px;
     margin-top: 50px;
     margin-bottom: 30px;
-    font-family: abhaya libre;
+    font-family: 'Abhaya Libre'; /* Tambahkan kutip */
 }
 
 .ctn{
@@ -67,28 +67,38 @@ header{
     left: 0;
     width: 100%;
     justify-content: space-between;
-    padding: 20px;
-    color: whitesmoke;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: rgb(234, 218, 94);
+    color: #000;
     border-bottom: 1px solid rgba(19, 11, 11, 0.1);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-     background-color: rgb(234, 218, 94);
-     color: #000;
+    z-index: 1000;
+}
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+.logo-img {
+    height: 40px;
+    width: auto;
+    margin-left: -10px;
 }
 
-.navbar .nav-links li a { 
+.navbar .nav-links li a {
     text-decoration: none;
-    color: black; 
+    color: black;
     font-weight: bold;
     padding: 5px 10px;
     border-radius: 5px;
     transition: background-color 0.3s ease;
-    
-    display: inline-block; 
+
+    display: inline-block;
 }
 
 .navbar .nav-links li.ctn a {
-    background-color: #ff007f; 
-    color: white; 
+    background-color: #ff007f;
+    color: white;
     padding: 10px 20px;
     border-radius: 20px;
 }
@@ -117,26 +127,22 @@ ul{
 }
 
 /* menu btn */
-.menu-btn{
-    position: absolute;
-    top: 30px;
-    right: 30px;
+.menu-btn {
     width: 30px;
+    height: auto;
     cursor: pointer;
-    display: none; 
+    display: none;
 }
 /* mobile device */
 @media only screen and (max-width: 850px) {
 
     .navbar{
-        padding: 0;
+        padding: 10px 20px;
     }
-    .logo{
-        position: absolute;
-        top: 30px;
-        left: 30px;
-        
+    .logo-img {
+        height: 30px;
     }
+
     .nav-links{
         flex-direction: column;
         width: 100%;
@@ -147,22 +153,26 @@ ul{
         top: 0;
         left: 0;
         transform: translateX(-100%);
-        transition: transform 0.5s ease-out; 
-        z-index: 1000;
-        display: flex; 
+        transition: transform 0.5s ease-out;
+        z-index: 999;
+        display: flex;
+        visibility: hidden;
+        opacity: 0;
+        transition: transform 0.5s ease-out, opacity 0.5s ease-out, visibility 0s 0.5s;
     }
     .nav-links li{
         margin: 30px auto;
     }
 
     .menu-btn {
-        display: block; 
+        display: block;
     }
-
-  
     .nav-links.mobile-menu {
-        transform: translateX(0); 
+        transform: translateX(0);
         box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+        visibility: visible;
+        opacity: 1;
+        transition: transform 0.5s ease-out, opacity 0.5s ease-out;
     }
 
     body.menu-open {
@@ -204,31 +214,31 @@ ul{
 }
 
 .event-content h2 {
-  margin-bottom: 20px;
-  font-size: 3vmin;
-  color: #333;
+    margin-bottom: 20px;
+    font-size: 3vmin;
+    color: #333;
 }
 
 .event-content p {
-  font-size: 2.3vmin;
-  margin-bottom: 30px;
-  color: #555;
-  line-height: 1.6;
+    font-size: 2.3vmin;
+    margin-bottom: 30px;
+    color: #555;
+    line-height: 1.6;
 }
 
 .event-btn {
-  padding: 10px 20px;
-  border: 1px solid #333;
-  color: #333;
-  border-radius: 5px;
-  background: transparent;
-  transition: 0.3s ease;
-  font-weight: bold;
+    padding: 10px 20px;
+    border: 1px solid #333;
+    color: #333;
+    border-radius: 5px;
+    background: transparent;
+    transition: 0.3s ease;
+    font-weight: bold;
 }
 
 .event-btn:hover {
-  background: #333;
-  color: white;
+    background: #333;
+    color: white;
 }
 
 
@@ -262,20 +272,20 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 450px; 
+    min-height: 450px;
 }
 
 #slider {
     margin: 0 auto;
     width: 900px;
-    max-width: 95%; 
+    max-width: 95%;
     text-align: center;
     position: relative;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    overflow: hidden; 
-    padding-bottom: 40px; 
+    overflow: hidden;
+    padding-bottom: 40px;
 }
 
 #slider input[type=radio] {
@@ -285,22 +295,22 @@ body {
 #slides {
     padding: 0;
     border: none;
-    background: none; 
+    background: none;
     position: relative;
     z-index: 1;
-    overflow: hidden; 
+    overflow: hidden;
 }
 
 #slides .inner {
     transition: margin-left 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
-    width: 400%;
+    width: 400%; /* 4 slides, so 400% of single slide width */
     line-height: 0;
     height: 350px;
-    display: flex; 
+    display: flex;
 }
 
 #slides .slide {
-    width: 25%;
+    width: 25%; /* Each slide takes 25% of 400% width = 100% of container */
     flex-shrink: 0;
     display: flex;
     justify-content: center;
@@ -308,40 +318,56 @@ body {
     height: 100%;
     color: #fff;
     text-align: center;
-    padding: 20px;
-    box-sizing: border-box; 
+    padding: 20px; /* Padding ini akan kita sesuaikan di media query */
+    box-sizing: border-box;
 }
 
 .slide-content {
-    max-width: 80%;
-    padding: 20px 40px;
-    max-width: 90%;
+    /* Hapus max-width dan padding yang berpotensi menyebabkan masalah di mobile */
+    /* Akan kita atur ulang di media query */
+    width: 100%; /* Pastikan mengisi lebar yang tersedia */
+    padding: 0 40px; /* Default padding */
 }
 
+/* FONT SIZE RESPONSIVE MENGGUNAKAN CLAMP */
 .slide-content h2 {
-    font-size: 2.5em;
-    margin-bottom: 30px;
+    font-family: 'Abhaya Libre', serif; /* Pastikan font Abhaya Libre diterapkan */
+    font-weight: bold; /* Tambahkan jika ingin lebih tebal */
+    font-size: clamp(1.8em, 2.5vw, 2.5em);
+    margin-bottom: 15px; /* Kurangi sedikit margin agar tidak terlalu jauh */
     letter-spacing: 1px;
+    word-wrap: break-word; /* Memastikan kata panjang bisa pecah */
+    overflow-wrap: break-word; /* Alternatif untuk word-wrap */
 }
 
 .slide-content p {
-    font-size: 1.1em;
-    line-height: 1.6;
+    font-family: 'Roboto', sans-serif; /* Gunakan Roboto untuk paragraf agar lebih mudah dibaca */
+    font-size: clamp(0.9em, 1.2vw, 1.1em);
+    line-height: 1.6; /* Pastikan ada ruang antar baris */
+    word-wrap: break-word; /* Memastikan kata panjang bisa pecah */
+    overflow-wrap: break-word; /* Alternatif untuk word-wrap */
 }
 
 /* Slide backgrounds - adjusted colors for better contrast */
 #slides .slide_1 {
-    background: #1a2a3a; 
+    background: #1a2a3a;
 }
 #slides .slide_2 {
-    background: #2b425b; 
+    background: #2b425b;
 }
 #slides .slide_3 {
     background: #3c5a7c;
 }
 #slides .slide_4 {
-    background: #4d729d; 
+    background: #4d729d;
 }
+
+/* Navigasi CSS-Only untuk pergeseran slide */
+#slide1:checked ~ #slides .inner { margin-left: 0; }
+#slide2:checked ~ #slides .inner { margin-left: -100%; }
+#slide3:checked ~ #slides .inner { margin-left: -200%; }
+#slide4:checked ~ #slides .inner { margin-left: -300%; }
+
 
 /* Navigation Arrows (Controls) */
 #controls {
@@ -353,12 +379,12 @@ body {
     align-items: center;
     transform: translateY(-50%);
     z-index: 3;
-    pointer-events: none; 
+    pointer-events: none; /* Disable pointer events on the container */
 }
 
 #controls label {
     cursor: pointer;
-    width: 40px; 
+    width: 40px;
     height: 40px;
     background-color: rgba(255, 255, 255, 0.7);
     border-radius: 50%;
@@ -368,7 +394,7 @@ body {
     font-size: 1.5em;
     color: #333;
     transition: background-color 0.3s ease, color 0.3s ease, opacity 0.3s ease;
-    pointer-events: auto; 
+    pointer-events: auto; /* Enable pointer events on the labels themselves */
     opacity: 0.8;
 }
 
@@ -378,19 +404,9 @@ body {
     opacity: 1;
 }
 
-/* Hide specific labels by default, show based on checked slide */
-#controls label.prev-slide,
-#controls label.next-slide {
-    display: none;
-}
-
-
-/* Left Arrow (Previous) */
-#slide1:checked ~ #controls label.prev-slide:nth-of-type(4), /* Last prev-slide label for slide 4 (loop back to slide 4 from slide 1) */
-#slide2:checked ~ #controls label.prev-slide:nth-of-type(1), /* Prev-slide label for slide 1 */
-#slide3:checked ~ #controls label.prev-slide:nth-of-type(2), /* Prev-slide label for slide 2 */
-#slide4:checked ~ #controls label.prev-slide:nth-of-type(3) { /* Prev-slide label for slide 3 */
-    display: flex;
+/* Tampilkan hanya label dengan ID #prev-btn dan #next-btn */
+#controls #prev-btn {
+    display: flex; /* Always display for JS control */
     margin-left: 20px;
     background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"%3E%3Cpath fill="%23333" d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6z"/%3E%3C/svg%3E'); /* Left arrow SVG */
     background-repeat: no-repeat;
@@ -398,19 +414,15 @@ body {
     background-size: 70%;
 }
 
-
-/* Right Arrow (Next) */
-#slide1:checked ~ #controls label.next-slide:nth-of-type(5), /* Next-slide label for slide 2 (counting all labels) */
-#slide2:checked ~ #controls label.next-slide:nth-of-type(6), /* Next-slide label for slide 3 */
-#slide3:checked ~ #controls label.next-slide:nth-of-type(7), /* Next-slide label for slide 4 */
-#slide4:checked ~ #controls label.next-slide:nth-of-type(8) { /* Next-slide label for slide 1 (loop back) */
-    display: flex;
+#controls #next-btn {
+    display: flex; /* Always display for JS control */
     margin-right: 20px;
     background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"%3E%3Cpath fill="%23333" d="M8.59 16.59L13.17 12l-4.58-4.59L10 6l6 6-6 6z"/%3E%3C/svg%3E'); /* Right arrow SVG */
     background-repeat: no-repeat;
     background-position: center;
     background-size: 70%;
 }
+
 
 /* Bullets */
 #bullets {
@@ -427,7 +439,7 @@ body {
     height: 12px;
     border-radius: 50%;
     background: #ccc;
-    margin: 0 8px; 
+    margin: 0 8px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
     border: 1px solid #aaa;
@@ -435,7 +447,7 @@ body {
 
 #bullets label:hover {
     background-color: #777;
-    transform: scale(1.1); 
+    transform: scale(1.1);
 }
 
 /* Active bullet styling */
@@ -443,7 +455,7 @@ body {
 #slide2:checked ~ #bullets label:nth-child(2),
 #slide3:checked ~ #bullets label:nth-child(3),
 #slide4:checked ~ #bullets label:nth-child(4) {
-    background: #007bff; 
+    background: #007bff;
     border-color: #007bff;
     transform: scale(1.2);
 }
@@ -459,13 +471,9 @@ body {
         height: 280px;
     }
 
-    .slide-content h2 {
-        font-size: 2em;
-        
-    }
-
-    .slide-content p {
-        font-size: 1em;
+    .slide-content {
+        /* Sesuaikan padding untuk layar tablet */
+        padding: 0 30px;
     }
 
     #controls label {
@@ -486,16 +494,24 @@ body {
         padding-bottom: 30px;
     }
     #slides .inner {
-        height: 220px;
+        height: 220px; /* Mungkin perlu sedikit ditingkatkan jika teks masih terlalu padat */
+    }
+    .slide-content {
+        /* Padding lebih kecil untuk layar HP yang sempit */
+        padding: 0 20px;
     }
     .slide-content h2 {
-        font-size: 1.8em;
+        /* Jika Abhaya Libre masih bermasalah, coba fallback font */
+        font-size: clamp(1.4em, 4vw, 1.8em); /* Sesuaikan rentang clamp untuk lebih kecil */
+        margin-bottom: 10px;
     }
     .slide-content p {
-        font-size: 0.9em;
+        font-size: clamp(0.8em, 3vw, 0.9em); /* Sesuaikan rentang clamp untuk lebih kecil */
+        line-height: 1.5; /* Sedikit kurangi line-height jika ruang sangat terbatas */
     }
+    /* Sembunyikan panah di layar sangat kecil jika tidak diperlukan */
     #controls label {
-        display: none !important; 
+        display: none !important;
     }
     #bullets {
         bottom: 15px;

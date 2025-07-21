@@ -212,3 +212,68 @@ document.addEventListener('DOMContentLoaded', () => {
         updateActiveClass('home'); // Hanya update active class, konten home sudah ada di index.html
     }
 });
+
+    // ============================================
+    // Logika Slider
+    // ============================================
+    const slideRadios = document.querySelectorAll('input[name="slider"]');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const totalSlides = slideRadios.length;
+    let currentSlideIndex = 0; // Index slide yang aktif (0-based)
+
+    // Fungsi untuk mengupdate slide yang aktif
+    function updateSlide(index) {
+        if (index >= 0 && index < totalSlides) {
+            slideRadios[index].checked = true;
+            currentSlideIndex = index;
+        }
+    }
+
+    // Event listener untuk tombol 'Next'
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            let nextIndex = (currentSlideIndex + 1) % totalSlides;
+            updateSlide(nextIndex);
+        });
+    }
+
+    // Event listener untuk tombol 'Previous'
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            let prevIndex = (currentSlideIndex - 1 + totalSlides) % totalSlides;
+            updateSlide(prevIndex);
+        });
+    }
+
+    // Event listener untuk bullets
+    slideRadios.forEach((radio, index) => {
+        radio.addEventListener('change', () => {
+            if (radio.checked) {
+                currentSlideIndex = index;
+            }
+        });
+    });
+
+    // Inisialisasi slide pertama saat halaman dimuat
+    updateSlide(0); // Pastikan slide pertama aktif secara default
+
+    // Opsional: Auto-slide
+    // let slideInterval = setInterval(() => {
+    //     let nextIndex = (currentSlideIndex + 1) % totalSlides;
+    //     updateSlide(nextIndex);
+    // }, 5000); // Ganti slide setiap 5 detik
+
+    // // Berhenti auto-slide saat user interaksi dengan slider
+    // const sliderContainer = document.getElementById('slider');
+    // if (sliderContainer) {
+    //     sliderContainer.addEventListener('mouseenter', () => {
+    //         clearInterval(slideInterval);
+    //     });
+    //     sliderContainer.addEventListener('mouseleave', () => {
+    //         slideInterval = setInterval(() => {
+    //             let nextIndex = (currentSlideIndex + 1) % totalSlides;
+    //             updateSlide(nextIndex);
+    //         }, 5000);
+    //     });
+    // }

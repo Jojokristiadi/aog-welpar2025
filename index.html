@@ -7,7 +7,10 @@
     <link rel="stylesheet" href="style.css"> </head>
 <body>
     <nav class="navbar">
-        <h1 class="logo">GMS</h1>
+
+        <div class="logo-container">
+        <img src="./Img/img/logo-aog-gms.png" alt="GMS Logo" class="logo-img">
+        </div>
         <ul class="nav-links">
             <li><a href="#" class="nav-link" data-target="home">HOME</a></li>
             <li><a href="#" class="nav-link" data-target="our_event">OUR EVENTS</a></li>
@@ -80,15 +83,8 @@
                 </div>
 
                 <div id="controls">
-                    <label for="slide1" class="prev-slide"></label>
-                    <label for="slide2" class="prev-slide"></label>
-                    <label for="slide3" class="prev-slide"></label>
-                    <label for="slide4" class="prev-slide"></label>
-
-                    <label for="slide1" class="next-slide"></label>
-                    <label for="slide2" class="next-slide"></label>
-                    <label for="slide3" class="next-slide"></label>
-                    <label for="slide4" class="next-slide"></label>
+                    <label class="prev-slide" id="prev-btn"></label>
+                    <label class="next-slide" id="next-btn"></label>
                 </div>
 
                 <div id="bullets">
