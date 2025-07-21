@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GMS - Welcome Home</title> 
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <nav class="navbar">
+        <h1 class="logo">GMS</h1>
+        <ul class="nav-links">
+            <li><a href="#" class="nav-link" data-target="home">HOME</a></li>
+            <li><a href="#" class="nav-link" data-target="our_event">OUR EVENTS</a></li>
+            <li class="ctn"><a href="#" class="nav-link" data-target="our_community">OUR COMMUNITY</a></li>
+        </ul>
+        <img src="./Img/img/menu-btn.png" alt="" class="menu-btn"> 
+    </nav>
+
+    <main id="main-content">
+        <header>
+            <div class="header-content">
+                <h2>WELCOME HOME!</h2>
+                <div class="line"></div>
+                <h1>Discover the comfort of your second home</h1>
+                <a href="#" class="ctn" id="learn-more-btn" data-target="our_event">Learn More</a> 
+            </div>
+        </header>
+
+        <section class="event-section">
+            <div class="event-container">
+                <div class="event-image">
+                    <img src="./Img/img/img1.png" alt="Event Image">
+                </div>
+                <div class="event-content">
+                    <h2>The Journey Of You(th)</h2>
+                    <p>
+                        Sebuah acara tahunan yang dilaksanakan untuk menyambut mahasiswa baru dan semester baru di Universitas Prasetiya Mulia. Tahun ini dengan mengangkat tema The Journey Of You(th), kami berharap...
+                    </p>
+                    <a href="#" class="event-btn">Book Your Seat</a>
+                </div>
+            </div>
+        </section>
+        
+        <section class="previous-section"></section>
+
+        <section class="slider-section">
+            <div id="slider">
+                <input type="radio" name="slider" id="slide1" checked>
+                <input type="radio" name="slider" id="slide2">
+                <input type="radio" name="slider" id="slide3">
+                <input type="radio" name="slider" id="slide4">
+
+                <div id="slides">
+                    <div class="inner">
+                        <div class="slide slide_1">
+                            <div class="slide-content">
+                                <h2>Abigail CG34</h2>
+                                <p>Testimonials provide a sense of what it's like to work with you or use your products. Change the text and add your own.</p>
+                            </div>
+                        </div>
+                        <div class="slide slide_2">
+                            <div class="slide-content">
+                                <h2>Testing 2</h2>
+                                <p>Content for Slide 2</p>
+                            </div>
+                        </div>
+                        <div class="slide slide_3">
+                            <div class="slide-content">
+                                <h2>Slide 3</h2>
+                                <p>Content for Slide 3</p>
+                            </div>
+                        </div>
+                        <div class="slide slide_4">
+                            <div class="slide-content">
+                                <h2>Slide 4</h2>
+                                <p>Content for Slide 4</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="controls">
+                    <label for="slide1" class="prev-slide"></label>
+                    <label for="slide2" class="prev-slide"></label>
+                    <label for="slide3" class="prev-slide"></label>
+                    <label for="slide4" class="prev-slide"></label>
+
+                    <label for="slide1" class="next-slide"></label>
+                    <label for="slide2" class="next-slide"></label>
+                    <label for="slide3" class="next-slide"></label>
+                    <label for="slide4" class="next-slide"></label>
+                </div>
+
+                <div id="bullets">
+                    <label for="slide1"></label>
+                    <label for="slide2"></label>
+                    <label for="slide3"></label>
+                    <label for="slide4"></label>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script> 
+</body>
+</html>
