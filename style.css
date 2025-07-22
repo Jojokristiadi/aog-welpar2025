@@ -75,6 +75,8 @@ header{
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     z-index: 1000;
 }
+
+
 .logo-container {
     display: flex;
     align-items: center;
@@ -523,11 +525,11 @@ body {
 .event-page-content,
 .community-page-content {
     padding: 40px;
-    background-color: #f8f8f8; /* Warna latar belakang ringan */
+    background-color: #f8f8f8; 
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     max-width: 900px;
-    margin: 40px auto; /* Memberi jarak dari navbar */
+    margin: 0 auto 40px auto;
     text-align: left;
     line-height: 1.6;
 }
@@ -606,4 +608,223 @@ body {
     color: #ff007f;
     margin-bottom: 15px;
     font-size: 1.4em;
+}
+
+.event-hero-header {
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+
+/* OUR EVENTS */
+
+/* ========================================= */
+/* CSS untuk Halaman Detail Acara (our_events.html) */
+/* ========================================= */
+
+.event-detail-section {
+    background-color: #F3ECE4;
+    padding: 80px 0;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+}
+
+
+.event-detail-section .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.event-title {
+    text-align: center;
+    font-family: 'Abhaya Libre', serif;
+    font-size: 3em;
+    color: #4b3f32;
+    margin-bottom: 60px;
+}
+
+
+.event-main-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px; 
+}
+
+.event-description {
+    flex-basis: 60%;
+}
+
+.event-description h2 {
+    font-family: 'Abhaya Libre', serif;
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+.event-description p {
+    line-height: 1.7;
+    font-size: 1.1em;
+}
+
+.event-info-card {
+    flex-basis: 35%;
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.event-info-card h3 {
+    font-size: 1.4em;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.event-info-card p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.event-booking {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.btn-book-seat {
+    display: inline-block;
+    padding: 12px 30px;
+    border: 1px solid #5c5c5c;
+    color: #333;
+    background-color: transparent;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.btn-book-seat:hover {
+    background-color: #333;
+    color: white;
+}
+
+.event-questions {
+    text-align: center;
+    margin-top: 80px;
+    padding-top: 40px;
+    border-top: 1px solid #dcd1c6;
+}
+
+.event-questions h2 {
+    font-family: 'Abhaya Libre', serif;
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+
+@media (max-width: 768px) {
+    .event-title {
+        font-size: 2.5em;
+    }
+
+    .event-main-content {
+        flex-direction: column;
+    }
+}
+
+
+/* Previous Events */
+
+/* ========================================= */
+/* CSS untuk Section "Previous Event"        */
+/* ========================================= */
+
+.previous-events-section {
+    padding: 80px 0;
+
+}
+
+.previous-events-section .section-title {
+    text-align: center;
+    font-family: 'Abhaya Libre', serif;
+    font-size: 2.8em;
+    color: black; 
+    margin-bottom: 50px;
+}
+
+.events-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.event-card {
+    flex-basis: 400px;
+    max-width: 420px;
+    text-align: center;
+
+    background-color: #F3ECE4; 
+    border-radius: 8px; 
+    overflow: hidden; 
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-container {
+    height: 250px; 
+    background-color: #ccc; 
+}
+
+.event-card img {
+    width: 100%;
+    height: 100%;
+  
+    object-fit: cover; 
+}
+
+
+.event-card .card-content {
+    padding: 25px;
+}
+
+.event-card h3 {
+    font-family: 'Abhaya Libre', serif;
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: #333; 
+}
+
+.event-card .divider {
+    height: 2px;
+    width: 50px;
+    background-color: #c4b9af;
+    margin: 0 auto 20px auto;
+}
+
+.event-card p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    color: #555;
+}
+
+.event-card .read-more {
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 900px) {
+    .event-card {
+        flex-basis: 45%;
+    }
+}
+
+@media (max-width: 600px) {
+    .event-card {
+        flex-basis: 80%;
+    }
 }
